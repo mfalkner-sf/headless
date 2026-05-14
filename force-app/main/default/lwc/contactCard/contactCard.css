@@ -1,0 +1,186 @@
+/* Customer Brand Colors - Red/Maroon Theme */
+:host {
+    --brand-primary: #B23A3A;
+    --brand-dark: #8B2E2E;
+    --brand-light: #D84848;
+    --text-on-brand: #FFFFFF;
+    --text-secondary: #F5F5F5;
+    --border-color: #FFFFFF;
+}
+
+.contact-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: var(--brand-primary);
+    color: var(--text-on-brand);
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(178, 58, 58, 0.3);
+}
+
+/* Header Section */
+.card-header {
+    background: var(--brand-primary);
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-photo-container {
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    object-fit: cover;
+    background: var(--brand-dark);
+}
+
+.profile-initials {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    background: var(--brand-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-on-brand);
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+    color: var(--text-on-brand);
+    word-wrap: break-word;
+}
+
+.contact-title {
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
+    opacity: 0.95;
+}
+
+.contact-company {
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0 0;
+    color: var(--text-secondary);
+    opacity: 0.9;
+}
+
+/* Body Section */
+.card-body {
+    padding: 1.25rem 1.5rem;
+    background: var(--brand-primary);
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.contact-detail:last-child {
+    margin-bottom: 0;
+}
+
+.detail-icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.detail-icon lightning-icon {
+    --slds-c-icon-color-foreground-default: var(--text-on-brand);
+}
+
+.detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    opacity: 0.85;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: var(--text-on-brand);
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.address-multiline {
+    white-space: pre-line;
+}
+
+/* Footer Section */
+.card-footer {
+    background: var(--brand-dark);
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.click-hint {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-name {
+        font-size: 1.25rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Lightning Card Override */
+lightning-card {
+    border: none;
+}
+
+.slds-card {
+    border: none;
+    box-shadow: none;
+}

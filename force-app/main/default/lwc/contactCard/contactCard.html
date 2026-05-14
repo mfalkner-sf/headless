@@ -1,0 +1,70 @@
+<template>
+    <lightning-card>
+        <div class="contact-card" onclick={handleCardClick}>
+            <!-- Header Section with Photo and Name -->
+            <div class="card-header">
+                <div class="profile-section">
+                    <div class="profile-photo-container">
+                        <template if:true={contact.data}>
+                            <template if:true={hasPhoto}>
+                                <img src={photoUrl} alt={contact.data.fields.Name.value} class="profile-photo" />
+                            </template>
+                            <template if:false={hasPhoto}>
+                                <div class="profile-initials">
+                                    {initials}
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="contact-name">{contact.data.fields.Name.value}</h2>
+                        <template if:true={contact.data.fields.Title.value}>
+                            <p class="contact-title">{contact.data.fields.Title.value}</p>
+                        </template>
+                        <template if:true={accountName}>
+                            <p class="contact-company">{accountName}</p>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Details Section -->
+            <div class="card-body">
+                <template if:true={contact.data.fields.Email.value}>
+                    <div class="contact-detail">
+                        <lightning-icon icon-name="utility:email" size="x-small" class="detail-icon"></lightning-icon>
+                        <div class="detail-content">
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">{contact.data.fields.Email.value}</span>
+                        </div>
+                    </div>
+                </template>
+
+                <template if:true={phoneNumber}>
+                    <div class="contact-detail">
+                        <lightning-icon icon-name="utility:phone_portrait" size="x-small" class="detail-icon"></lightning-icon>
+                        <div class="detail-content">
+                            <span class="detail-label">Phone</span>
+                            <span class="detail-value">{phoneNumber}</span>
+                        </div>
+                    </div>
+                </template>
+
+                <template if:true={mailingAddress}>
+                    <div class="contact-detail">
+                        <lightning-icon icon-name="utility:location" size="x-small" class="detail-icon"></lightning-icon>
+                        <div class="detail-content">
+                            <span class="detail-label">Address</span>
+                            <span class="detail-value address-multiline">{mailingAddress}</span>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Footer Hint -->
+            <div class="card-footer">
+                <span class="click-hint">Click card to view full details</span>
+            </div>
+        </div>
+    </lightning-card>
+</template>
