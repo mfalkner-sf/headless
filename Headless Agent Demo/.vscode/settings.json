@@ -6,6 +6,5 @@
     "**/.sfdx": true
   },
   "xml.preferences.showSchemaDocumentationType": "none",
-  "salesforce.einsteinForDevelopers.enable": true,
-  "vibes.salesforce.defaultOrg": "storm.86cf6519f9de13@salesforce.com"
+  "vibes.salesforce.defaultOrg": "storm.70d9833d447b43@salesforce.com"
 }
